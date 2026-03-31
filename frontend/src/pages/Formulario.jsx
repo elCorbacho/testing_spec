@@ -52,7 +52,7 @@ function Formulario() {
 
       if (data.success) {
         agregarMensaje(data.data)
-        setStatus({ type: 'success', message: '¡Formulario enviado correctamente! 🎉' })
+        setStatus({ type: 'success', message: '¡Formulario enviado correctamente!' })
         setFormData({ nombre: '', email: '', mensaje: '' })
         return
       }
@@ -67,16 +67,19 @@ function Formulario() {
 
   return (
     <section className="page-content">
-      <h1>✍️ Enviar mensaje</h1>
-      <p className="subtitle">Completá el formulario para guardar un nuevo mensaje.</p>
+      <div className="page-header">
+        <h1>Nuevo Mensaje</h1>
+        <p className="page-subtitle">Completá el formulario para enviar un nuevo mensaje.</p>
+      </div>
 
       <form onSubmit={handleSubmit} noValidate>
         <div className="form-group">
-          <label htmlFor="nombre">Nombre</label>
+          <label className="form-label" htmlFor="nombre">Nombre</label>
           <input
             type="text"
             id="nombre"
             name="nombre"
+            className="form-input"
             value={formData.nombre}
             onChange={handleChange}
             placeholder="Tu nombre"
@@ -85,11 +88,12 @@ function Formulario() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="email">Email</label>
+          <label className="form-label" htmlFor="email">Email</label>
           <input
             type="email"
             id="email"
             name="email"
+            className="form-input"
             value={formData.email}
             onChange={handleChange}
             placeholder="tu@email.com"
@@ -98,10 +102,11 @@ function Formulario() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="mensaje">Mensaje</label>
+          <label className="form-label" htmlFor="mensaje">Mensaje</label>
           <textarea
             id="mensaje"
             name="mensaje"
+            className="form-textarea"
             value={formData.mensaje}
             onChange={handleChange}
             placeholder="Escribí tu mensaje..."
@@ -109,7 +114,7 @@ function Formulario() {
           />
         </div>
 
-        <button type="submit" disabled={loading}>
+        <button type="submit" className="btn btn-primary btn-full btn-large" disabled={loading}>
           {loading ? 'Enviando...' : 'Enviar Mensaje'}
         </button>
       </form>

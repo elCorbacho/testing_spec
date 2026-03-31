@@ -53,16 +53,21 @@ function CrearTicket() {
 
   return (
     <section className="page-content">
-      <h1>🎫 Crear Ticket</h1>
-      <p className="subtitle">Completá el formulario para crear un nuevo ticket de soporte.</p>
+      <div className="page-header">
+        <h1>Crear Ticket</h1>
+        <p className="page-subtitle">
+          Completá el formulario para crear un nuevo ticket de soporte.
+        </p>
+      </div>
 
       <form onSubmit={handleSubmit} noValidate>
         <div className="form-group">
-          <label htmlFor="titulo">Título</label>
+          <label className="form-label" htmlFor="titulo">Título</label>
           <input
             type="text"
             id="titulo"
             name="titulo"
+            className="form-input"
             value={formData.titulo}
             onChange={handleChange}
             placeholder="Breve descripción del problema"
@@ -71,10 +76,11 @@ function CrearTicket() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="descripcion">Descripción</label>
+          <label className="form-label" htmlFor="descripcion">Descripción</label>
           <textarea
             id="descripcion"
             name="descripcion"
+            className="form-textarea"
             value={formData.descripcion}
             onChange={handleChange}
             placeholder="Detallá el problema..."
@@ -83,10 +89,11 @@ function CrearTicket() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="prioridad">Prioridad</label>
+          <label className="form-label" htmlFor="prioridad">Prioridad</label>
           <select
             id="prioridad"
             name="prioridad"
+            className="form-select"
             value={formData.prioridad}
             onChange={handleChange}
           >
@@ -96,7 +103,7 @@ function CrearTicket() {
           </select>
         </div>
 
-        <button type="submit" disabled={loading}>
+        <button type="submit" className="btn btn-primary btn-full btn-large" disabled={loading}>
           {loading ? 'Creando...' : 'Crear Ticket'}
         </button>
       </form>
