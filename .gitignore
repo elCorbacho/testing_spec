@@ -1,0 +1,41 @@
+# Dependencies
+backend/node_modules/
+frontend/node_modules/
+
+# Build outputs
+frontend/dist/
+backend/coverage/
+frontend/coverage/
+coverage/
+
+# Runtime logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+frontend/.env
+frontend/.env.*
+
+# Caches
+.vite/
+.nyc_output/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local AI tooling state
+.claude/
+.codex/
+.opencode/
+**/.claude/
+**/.codex/
+**/.opencode/
