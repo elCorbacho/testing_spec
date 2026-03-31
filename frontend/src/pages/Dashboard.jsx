@@ -47,31 +47,35 @@ function Dashboard() {
 
   return (
     <section className="page-content">
-      <h1>📊 Dashboard de Tickets</h1>
-      <p className="subtitle">Resumen y gestión de tickets de soporte.</p>
+      <div className="page-header">
+        <h1>Dashboard de Tickets</h1>
+        <p className="page-subtitle">
+          Estado actual de todos los tickets de soporte.
+        </p>
+      </div>
 
-      <div className="metricas">
-        <div className="metrica-card">
-          <span className="metrica-numero">{metricas.total}</span>
-          <span className="metrica-label">Total</span>
+      <div className="metrics-grid">
+        <div className="metric-card total">
+          <span className="metric-number">{metricas.total}</span>
+          <span className="metric-label">Total</span>
         </div>
-        <div className="metrica-card abiertos">
-          <span className="metrica-numero">{metricas.abiertos}</span>
-          <span className="metrica-label">Abiertos</span>
+        <div className="metric-card abiertos">
+          <span className="metric-number">{metricas.abiertos}</span>
+          <span className="metric-label">Abiertos</span>
         </div>
-        <div className="metrica-card progreso">
-          <span className="metrica-numero">{metricas.enProgreso}</span>
-          <span className="metrica-label">En Progreso</span>
+        <div className="metric-card en-progreso">
+          <span className="metric-number">{metricas.enProgreso}</span>
+          <span className="metric-label">En Progreso</span>
         </div>
-        <div className="metrica-card cerrados">
-          <span className="metrica-numero">{metricas.cerrados}</span>
-          <span className="metrica-label">Cerrados</span>
+        <div className="metric-card cerrados">
+          <span className="metric-number">{metricas.cerrados}</span>
+          <span className="metric-label">Cerrados</span>
         </div>
       </div>
 
-      <div className="filtros">
+      <div className="filters">
         <button
-          className={`filtro-btn ${filtro === 'todos' ? 'active' : ''}`}
+          className={`filter-pill ${filtro === 'todos' ? 'active' : ''}`}
           onClick={() => setFiltro('todos')}
         >
           Todos
@@ -79,7 +83,7 @@ function Dashboard() {
         {ESTADOS.map((estado) => (
           <button
             key={estado}
-            className={`filtro-btn ${filtro === estado ? 'active' : ''}`}
+            className={`filter-pill ${filtro === estado ? 'active' : ''}`}
             onClick={() => setFiltro(estado)}
           >
             {estado.charAt(0).toUpperCase() + estado.slice(1)}
@@ -88,24 +92,29 @@ function Dashboard() {
       </div>
 
       {ticketsFiltrados.length === 0 ? (
-        <div className="empty-state">No hay tickets{filtro !== 'todos' ? ` con estado "${filtro}"` : ''}</div>
+        <div className="empty-state">
+          <svg className="empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <path d="M15 5v2m0 4v2m0 4v2M5 5h14a2 2 0 012 2v3a2 2 0 010 4v3a2 2 0 01-2 2H5a2 2 0 01-2-2v-3a2 2 0 010-4V7a2 2 0 012-2z" />
+          </svg>
+          <p>No hay tickets{filtro !== 'todos' ? ` con estado "${filtro}"` : ''}</p>
+        </div>
       ) : (
         <div className="tickets-lista">
           {ticketsFiltrados.map((ticket) => (
             <article className="ticket-card" key={ticket.id}>
               <div className="ticket-header">
-                <h2>{ticket.titulo}</h2>
-                <span className={`estado-badge ${ticket.estado.replace(' ', '-')}`}>
+                <h2 className="ticket-title">{ticket.titulo}</h2>
+                <span className={`status-badge ${ticket.estado.replace(' ', '-')}`}>
                   {ticket.estado}
                 </span>
               </div>
-              <p className="ticket-descripcion">{ticket.descripcion}</p>
+              <p className="ticket-desc">{ticket.descripcion}</p>
               <div className="ticket-footer">
                 <span className="ticket-meta">
-                  Prioridad: {ticket.prioridad} · {new Date(ticket.fecha).toLocaleString()}
+                  Prioridad: {ticket.prioridad} · {new Date(ticket.fecha).toLocaleDateString()}
                 </span>
                 <button
-                  className="estado-btn"
+                  className="status-btn"
                   onClick={() => handleCambiarEstado(ticket)}
                 >
                   → {siguienteEstado[ticket.estado]}
