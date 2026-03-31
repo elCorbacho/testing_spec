@@ -15,6 +15,12 @@ function Home() {
         <Link className="button-link secondary" to="/lista">
           Ver mensajes enviados
         </Link>
+        <Link className="button-link" to="/nuevo-ticket">
+          🎫 Crear ticket
+        </Link>
+        <Link className="button-link secondary" to="/dashboard">
+          📊 Ver dashboard
+        </Link>
       </div>
     </section>
   )
