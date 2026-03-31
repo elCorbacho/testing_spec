@@ -2,6 +2,8 @@ import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import Formulario from './pages/Formulario'
 import ListaMensajes from './pages/ListaMensajes'
+import CrearTicket from './pages/CrearTicket'
+import Dashboard from './pages/Dashboard'
 
 function App() {
   return (
