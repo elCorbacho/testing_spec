@@ -1,50 +1,40 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# Proyecto Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Shared Frontend Language
+All frontend changes MUST use the shared visual language, design tokens, layout patterns, and reusable primitives defined by the active feature plan or existing application shell.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Accessibility Is Non-Negotiable
+All user-facing interfaces MUST preserve semantic structure, visible focus states, keyboard usability, readable contrast, and reduced-motion handling when motion is introduced.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Scope Discipline
+Frontend-only features MUST NOT modify backend APIs, persistence, or server-side contracts unless the feature specification explicitly includes and justifies those backend changes.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Verification Before Completion
+No feature MAY be considered complete until its required verification steps have been executed and documented. This includes manual QA for user-facing flows and any explicitly required audits such as Lighthouse thresholds.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Prefer Simplicity Over New Abstractions
+New frameworks, architectural layers, or design systems SHOULD NOT be introduced unless the implementation plan clearly explains why the current stack is insufficient.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Additional Constraints
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+- React and Vite are the default frontend stack for this repository.
+- Plain CSS with shared design tokens is the default styling strategy unless a feature spec explicitly approves another approach.
+- Frontend work MUST preserve existing route structure and context providers unless a plan explicitly calls for architectural change.
+- Key user-facing routes MUST meet the quality thresholds defined in the active feature plan.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## Development Workflow
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+- `spec.md`, `plan.md`, and `tasks.md` MUST exist before implementation begins.
+- Tasks MUST be organized by user story so each story can be implemented and verified independently.
+- Any required QA evidence or audit results MUST be recorded in the feature artifacts before closing verification tasks.
+- Analyze findings that reveal critical governance or requirement gaps MUST be addressed or explicitly accepted before implementation proceeds.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution supersedes local planning preferences, ad hoc task breakdowns, and undocumented workflow habits.
+Any amendment to this constitution MUST be explicit, reviewed, and committed as a deliberate project change.
+All future plans, tasks, and reviews are expected to validate compliance against these principles.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-03-31 | **Last Amended**: 2026-03-31

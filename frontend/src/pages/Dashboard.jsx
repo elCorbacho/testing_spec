@@ -54,7 +54,7 @@ function Dashboard() {
         </p>
       </div>
 
-      <div className="metrics-grid">
+      <div className="metrics-grid brutal-grid-metrics">
         <div className="metric-card total">
           <span className="metric-number">{metricas.total}</span>
           <span className="metric-label">Total</span>
@@ -99,9 +99,9 @@ function Dashboard() {
           <p>No hay tickets{filtro !== 'todos' ? ` con estado "${filtro}"` : ''}</p>
         </div>
       ) : (
-        <div className="tickets-lista">
-          {ticketsFiltrados.map((ticket) => (
-            <article className="ticket-card" key={ticket.id}>
+        <div className="tickets-lista editorial-ticket-grid">
+          {ticketsFiltrados.map((ticket, index) => (
+            <article className="ticket-card stagger-card" key={ticket.id} style={{ '--stagger-index': index }}>
               <div className="ticket-header">
                 <h2 className="ticket-title">{ticket.titulo}</h2>
                 <span className={`status-badge ${ticket.estado.replace(' ', '-')}`}>
@@ -117,7 +117,7 @@ function Dashboard() {
                   className="status-btn"
                   onClick={() => handleCambiarEstado(ticket)}
                 >
-                  → {siguienteEstado[ticket.estado]}
+                  -> {siguienteEstado[ticket.estado]}
                 </button>
               </div>
             </article>

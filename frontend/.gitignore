@@ -7,6 +7,12 @@ dist/
 # Vite cache
 .vite/
 
+# Editor and temp files
+.vscode/
+.idea/
+*.tmp
+*.swp
+
 # Test and coverage output
 coverage/
 
