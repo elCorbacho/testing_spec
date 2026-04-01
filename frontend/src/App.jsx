@@ -18,25 +18,30 @@ function NavLink({ to, children }) {
 function App() {
   return (
     <BrowserRouter>
-      <div className="container app-shell">
-        <header className="header">
-          <span className="header-title">Formulario de Contacto</span>
-          <nav className="nav-links">
-            <NavLink to="/">Inicio</NavLink>
-            <NavLink to="/formulario">Formulario</NavLink>
-            <NavLink to="/lista">Lista</NavLink>
-            <NavLink to="/nuevo-ticket">Tickets</NavLink>
-            <NavLink to="/dashboard">Dashboard</NavLink>
-          </nav>
-        </header>
+      <div className="app-frame">
+        <div className="container app-shell">
+          <header className="header">
+            <div>
+              <span className="header-kicker">utility desk / 1986</span>
+              <span className="header-title">Formulario de Contacto</span>
+            </div>
+            <nav className="nav-links">
+              <NavLink to="/">Inicio</NavLink>
+              <NavLink to="/formulario">Formulario</NavLink>
+              <NavLink to="/lista">Lista</NavLink>
+              <NavLink to="/nuevo-ticket">Tickets</NavLink>
+              <NavLink to="/dashboard">Dashboard</NavLink>
+            </nav>
+          </header>
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/formulario" element={<Formulario />} />
-          <Route path="/lista" element={<ListaMensajes />} />
-          <Route path="/nuevo-ticket" element={<CrearTicket />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/formulario" element={<Formulario />} />
+            <Route path="/lista" element={<ListaMensajes />} />
+            <Route path="/nuevo-ticket" element={<CrearTicket />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Routes>
+        </div>
       </div>
     </BrowserRouter>
   )

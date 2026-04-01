@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { useMensajes } from '../context/MensajesContext'
+import Button from '../components/Button'
+import TextInput from '../components/TextInput'
 
 const validarFormulario = ({ nombre, email, mensaje }) => {
   if (!nombre.trim() || !email.trim() || !mensaje.trim()) {
@@ -72,54 +74,53 @@ function Formulario() {
         <p className="page-subtitle">Completá el formulario para enviar un nuevo mensaje.</p>
       </div>
 
-      <form onSubmit={handleSubmit} noValidate>
-        <div className="form-group">
-          <label className="form-label" htmlFor="nombre">Nombre</label>
-          <input
-            type="text"
-            id="nombre"
-            name="nombre"
-            className="form-input"
-            value={formData.nombre}
-            onChange={handleChange}
-            placeholder="Tu nombre"
-            required
-          />
-        </div>
+      <form className="editorial-form" onSubmit={handleSubmit} noValidate aria-busy={loading}>
+        <TextInput
+          type="text"
+          id="nombre"
+          name="nombre"
+          label="Nombre"
+          value={formData.nombre}
+          onChange={handleChange}
+          placeholder="Tu nombre"
+          describedBy={status.message ? 'formulario-status' : undefined}
+          required
+        />
 
-        <div className="form-group">
-          <label className="form-label" htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            className="form-input"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="tu@email.com"
-            required
-          />
-        </div>
+        <TextInput
+          type="email"
+          id="email"
+          name="email"
+          label="Email"
+          value={formData.email}
+          onChange={handleChange}
+          placeholder="tu@email.com"
+          describedBy={status.message ? 'formulario-status' : undefined}
+          required
+        />
 
-        <div className="form-group">
-          <label className="form-label" htmlFor="mensaje">Mensaje</label>
-          <textarea
-            id="mensaje"
-            name="mensaje"
-            className="form-textarea"
-            value={formData.mensaje}
-            onChange={handleChange}
-            placeholder="Escribí tu mensaje..."
-            required
-          />
-        </div>
+        <TextInput
+          as="textarea"
+          id="mensaje"
+          name="mensaje"
+          label="Mensaje"
+          value={formData.mensaje}
+          onChange={handleChange}
+          placeholder="Escribi tu mensaje..."
+          describedBy={status.message ? 'formulario-status' : undefined}
+          required
+        />
 
-        <button type="submit" className="btn btn-primary btn-full btn-large" disabled={loading}>
+        <Button type="submit" className="btn-full btn-large" disabled={loading} aria-busy={loading}>
           {loading ? 'Enviando...' : 'Enviar Mensaje'}
-        </button>
+        </Button>
       </form>
 
-      {status.message && <div className={`message ${status.type}`}>{status.message}</div>}
+      {status.message && (
+        <div id="formulario-status" className={`message ${status.type}`} role="status" aria-live="polite">
+          {status.message}
+        </div>
+      )}
     </section>
   )
 }

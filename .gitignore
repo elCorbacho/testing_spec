@@ -28,6 +28,12 @@ frontend/.env.*
 .vite/
 .nyc_output/
 
+# Editor and temp files
+.vscode/
+.idea/
+*.tmp
+*.swp
+
 # OS files
 .DS_Store
 Thumbs.db

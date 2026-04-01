@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { useTickets } from '../context/TicketsContext'
+import Button from '../components/Button'
+import TextInput from '../components/TextInput'
 
 function CrearTicket() {
   const { agregarTicket } = useTickets()
@@ -60,55 +62,55 @@ function CrearTicket() {
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} noValidate>
-        <div className="form-group">
-          <label className="form-label" htmlFor="titulo">Título</label>
-          <input
-            type="text"
-            id="titulo"
-            name="titulo"
-            className="form-input"
-            value={formData.titulo}
-            onChange={handleChange}
-            placeholder="Breve descripción del problema"
-            required
-          />
-        </div>
+      <form className="editorial-form" onSubmit={handleSubmit} noValidate aria-busy={loading}>
+        <TextInput
+          type="text"
+          id="titulo"
+          name="titulo"
+          label="Titulo"
+          value={formData.titulo}
+          onChange={handleChange}
+          placeholder="Breve descripcion del problema"
+          describedBy={status.message ? 'ticket-status' : undefined}
+          required
+        />
 
-        <div className="form-group">
-          <label className="form-label" htmlFor="descripcion">Descripción</label>
-          <textarea
-            id="descripcion"
-            name="descripcion"
-            className="form-textarea"
-            value={formData.descripcion}
-            onChange={handleChange}
-            placeholder="Detallá el problema..."
-            required
-          />
-        </div>
+        <TextInput
+          as="textarea"
+          id="descripcion"
+          name="descripcion"
+          label="Descripcion"
+          value={formData.descripcion}
+          onChange={handleChange}
+          placeholder="Detalla el problema..."
+          describedBy={status.message ? 'ticket-status' : undefined}
+          required
+        />
 
-        <div className="form-group">
-          <label className="form-label" htmlFor="prioridad">Prioridad</label>
-          <select
-            id="prioridad"
-            name="prioridad"
-            className="form-select"
-            value={formData.prioridad}
-            onChange={handleChange}
-          >
+        <TextInput
+          as="select"
+          id="prioridad"
+          name="prioridad"
+          label="Prioridad"
+          value={formData.prioridad}
+          onChange={handleChange}
+          describedBy={status.message ? 'ticket-status' : undefined}
+        >
             <option value="baja">Baja</option>
             <option value="media">Media</option>
             <option value="alta">Alta</option>
-          </select>
-        </div>
+        </TextInput>
 
-        <button type="submit" className="btn btn-primary btn-full btn-large" disabled={loading}>
+        <Button type="submit" className="btn-full btn-large" disabled={loading} aria-busy={loading}>
           {loading ? 'Creando...' : 'Crear Ticket'}
-        </button>
+        </Button>
       </form>
 
-      {status.message && <div className={`message ${status.type}`}>{status.message}</div>}
+      {status.message && (
+        <div id="ticket-status" className={`message ${status.type}`} role="status" aria-live="polite">
+          {status.message}
+        </div>
+      )}
     </section>
   )
 }
