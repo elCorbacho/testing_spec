@@ -1,0 +1,25 @@
+{
+  "project": {
+    "name": "testing_spec",
+    "type": "brownfield",
+    "domain": "form-ticket-management"
+  },
+  "tech_stack": {
+    "frontend": "React 18 + Vite 5",
+    "backend": "Node.js + Express 4",
+    "database": "in-memory arrays",
+    "styling": "plain CSS with design tokens",
+    "testing": "node:test + node:assert/strict"
+  },
+  "preferences": {
+    "phase_approach": "foundation-first",
+    "verification": "manual QA + Lighthouse audit",
+    "code_style": "ES modules frontend, CommonJS backend"
+  },
+  "constraints": {
+    "no_backend_changes": true,
+    "accessibility_target": "lighthouse >= 95",
+    "responsive_range": "320px-1440px",
+    "motion": "prefers-reduced-motion supported"
+  }
+}
