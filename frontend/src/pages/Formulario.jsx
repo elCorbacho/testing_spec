@@ -74,7 +74,7 @@ function Formulario() {
         <p className="page-subtitle">Completá el formulario para enviar un nuevo mensaje.</p>
       </div>
 
-      <form className="editorial-form" onSubmit={handleSubmit} noValidate>
+      <form className="editorial-form" onSubmit={handleSubmit} noValidate aria-busy={loading}>
         <TextInput
           type="text"
           id="nombre"
@@ -83,6 +83,7 @@ function Formulario() {
           value={formData.nombre}
           onChange={handleChange}
           placeholder="Tu nombre"
+          describedBy={status.message ? 'formulario-status' : undefined}
           required
         />
 
@@ -94,6 +95,7 @@ function Formulario() {
           value={formData.email}
           onChange={handleChange}
           placeholder="tu@email.com"
+          describedBy={status.message ? 'formulario-status' : undefined}
           required
         />
 
@@ -105,15 +107,20 @@ function Formulario() {
           value={formData.mensaje}
           onChange={handleChange}
           placeholder="Escribi tu mensaje..."
+          describedBy={status.message ? 'formulario-status' : undefined}
           required
         />
 
-        <Button type="submit" className="btn-full btn-large" disabled={loading}>
+        <Button type="submit" className="btn-full btn-large" disabled={loading} aria-busy={loading}>
           {loading ? 'Enviando...' : 'Enviar Mensaje'}
         </Button>
       </form>
 
-      {status.message && <div className={`message ${status.type}`}>{status.message}</div>}
+      {status.message && (
+        <div id="formulario-status" className={`message ${status.type}`} role="status" aria-live="polite">
+          {status.message}
+        </div>
+      )}
     </section>
   )
 }

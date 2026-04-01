@@ -3,9 +3,11 @@ function TextInput({
   id,
   as = 'input',
   className = '',
+  describedBy,
   ...props
 }) {
   const fieldId = id || props.name
+  const ariaProps = describedBy ? { 'aria-describedby': describedBy } : {}
   const classes = [
     as === 'textarea' ? 'form-textarea' : as === 'select' ? 'form-select' : 'form-input',
     className,
@@ -22,11 +24,11 @@ function TextInput({
       ) : null}
 
       {as === 'textarea' ? (
-        <textarea id={fieldId} className={classes} {...props} />
+        <textarea id={fieldId} className={classes} {...ariaProps} {...props} />
       ) : as === 'select' ? (
-        <select id={fieldId} className={classes} {...props} />
+        <select id={fieldId} className={classes} {...ariaProps} {...props} />
       ) : (
-        <input id={fieldId} className={classes} {...props} />
+        <input id={fieldId} className={classes} {...ariaProps} {...props} />
       )}
     </div>
   )

@@ -62,7 +62,7 @@ function CrearTicket() {
         </p>
       </div>
 
-      <form className="editorial-form" onSubmit={handleSubmit} noValidate>
+      <form className="editorial-form" onSubmit={handleSubmit} noValidate aria-busy={loading}>
         <TextInput
           type="text"
           id="titulo"
@@ -71,6 +71,7 @@ function CrearTicket() {
           value={formData.titulo}
           onChange={handleChange}
           placeholder="Breve descripcion del problema"
+          describedBy={status.message ? 'ticket-status' : undefined}
           required
         />
 
@@ -82,6 +83,7 @@ function CrearTicket() {
           value={formData.descripcion}
           onChange={handleChange}
           placeholder="Detalla el problema..."
+          describedBy={status.message ? 'ticket-status' : undefined}
           required
         />
 
@@ -92,18 +94,23 @@ function CrearTicket() {
           label="Prioridad"
           value={formData.prioridad}
           onChange={handleChange}
+          describedBy={status.message ? 'ticket-status' : undefined}
         >
             <option value="baja">Baja</option>
             <option value="media">Media</option>
             <option value="alta">Alta</option>
         </TextInput>
 
-        <Button type="submit" className="btn-full btn-large" disabled={loading}>
+        <Button type="submit" className="btn-full btn-large" disabled={loading} aria-busy={loading}>
           {loading ? 'Creando...' : 'Crear Ticket'}
         </Button>
       </form>
 
-      {status.message && <div className={`message ${status.type}`}>{status.message}</div>}
+      {status.message && (
+        <div id="ticket-status" className={`message ${status.type}`} role="status" aria-live="polite">
+          {status.message}
+        </div>
+      )}
     </section>
   )
 }

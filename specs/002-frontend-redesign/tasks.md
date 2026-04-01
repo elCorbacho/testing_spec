@@ -17,9 +17,9 @@
 
 **Purpose**: Align feature docs and frontend entry points with the redesign plan.
 
-- [ ] T001 Reconcile route and component targets in `C:\Users\histo\proyecto_test\specs\002-frontend-redesign\plan.md` and `C:\Users\histo\proyecto_test\specs\002-frontend-redesign\contracts\ui-routes.md`
-- [ ] T002 Review frontend entry points and route shell in `C:\Users\histo\proyecto_test\frontend\src\main.jsx` and `C:\Users\histo\proyecto_test\frontend\src\App.jsx`
-- [ ] T003 [P] Review existing form and dashboard surfaces in `C:\Users\histo\proyecto_test\frontend\src\pages\Formulario.jsx`, `C:\Users\histo\proyecto_test\frontend\src\pages\CrearTicket.jsx`, and `C:\Users\histo\proyecto_test\frontend\src\pages\Dashboard.jsx`
+- [X] T001 Reconcile route and component targets in `C:\Users\histo\proyecto_test\specs\002-frontend-redesign\plan.md` and `C:\Users\histo\proyecto_test\specs\002-frontend-redesign\contracts\ui-routes.md`
+- [X] T002 Review frontend entry points and route shell in `C:\Users\histo\proyecto_test\frontend\src\main.jsx` and `C:\Users\histo\proyecto_test\frontend\src\App.jsx`
+- [X] T003 [P] Review existing form and dashboard surfaces in `C:\Users\histo\proyecto_test\frontend\src\pages\Formulario.jsx`, `C:\Users\histo\proyecto_test\frontend\src\pages\CrearTicket.jsx`, and `C:\Users\histo\proyecto_test\frontend\src\pages\Dashboard.jsx`
 
 ---
 
@@ -29,12 +29,12 @@
 
 **⚠️ CRITICAL**: No user story work should start until this phase is complete.
 
-- [ ] T004 Define the global design token system, motion tokens, and brutalist reset in `C:\Users\histo\proyecto_test\frontend\src\index.css`
-- [ ] T005 Configure heading/body font loading and fallback strategy in `C:\Users\histo\proyecto_test\frontend\index.html` and `C:\Users\histo\proyecto_test\frontend\src\index.css`
-- [ ] T006 [P] Implement shared button primitive variants in `C:\Users\histo\proyecto_test\frontend\src\components\Button.jsx`
-- [ ] T007 [P] Implement shared text/select/textarea primitive behavior in `C:\Users\histo\proyecto_test\frontend\src\components\TextInput.jsx`
-- [ ] T008 Implement the shared app shell, sticky header, and navigation states in `C:\Users\histo\proyecto_test\frontend\src\App.jsx` and `C:\Users\histo\proyecto_test\frontend\src\index.css`
-- [ ] T009 Implement accessibility foundations for `:focus-visible`, status messaging, and `prefers-reduced-motion` handling in `C:\Users\histo\proyecto_test\frontend\src\index.css`
+- [X] T004 Define the global design token system, motion tokens, and brutalist reset in `C:\Users\histo\proyecto_test\frontend\src\index.css`
+- [X] T005 Configure heading/body font loading and fallback strategy in `C:\Users\histo\proyecto_test\frontend\index.html` and `C:\Users\histo\proyecto_test\frontend\src\index.css`
+- [X] T006 [P] Implement shared button primitive variants in `C:\Users\histo\proyecto_test\frontend\src\components\Button.jsx`
+- [X] T007 [P] Implement shared text/select/textarea primitive behavior in `C:\Users\histo\proyecto_test\frontend\src\components\TextInput.jsx`
+- [X] T008 Implement the shared app shell, sticky header, and navigation states in `C:\Users\histo\proyecto_test\frontend\src\App.jsx` and `C:\Users\histo\proyecto_test\frontend\src\index.css`
+- [X] T009 Implement accessibility foundations for `:focus-visible`, status messaging, and `prefers-reduced-motion` handling in `C:\Users\histo\proyecto_test\frontend\src\index.css`
 
 **Checkpoint**: Shared tokens, primitives, shell, and accessibility foundations are ready for story work.
 
@@ -48,10 +48,10 @@
 
 ### Implementation for User Story 1
 
-- [ ] T010 [US1] Redesign the landing page action-card layout in `C:\Users\histo\proyecto_test\frontend\src\pages\Home.jsx` and `C:\Users\histo\proyecto_test\frontend\src\index.css`
-- [ ] T011 [P] [US1] Restyle message list cards and empty states in `C:\Users\histo\proyecto_test\frontend\src\pages\ListaMensajes.jsx` and `C:\Users\histo\proyecto_test\frontend\src\index.css`
-- [ ] T012 [US1] Ensure shared route-level page headers and spacing remain consistent across `C:\Users\histo\proyecto_test\frontend\src\pages\Home.jsx`, `C:\Users\histo\proyecto_test\frontend\src\pages\Formulario.jsx`, `C:\Users\histo\proyecto_test\frontend\src\pages\CrearTicket.jsx`, `C:\Users\histo\proyecto_test\frontend\src\pages\ListaMensajes.jsx`, and `C:\Users\histo\proyecto_test\frontend\src\pages\Dashboard.jsx`
-- [ ] T013 [US1] Verify the global token system is applied consistently across shell, cards, and typography in `C:\Users\histo\proyecto_test\frontend\src\index.css`
+- [X] T010 [US1] Redesign the landing page action-card layout in `C:\Users\histo\proyecto_test\frontend\src\pages\Home.jsx` and `C:\Users\histo\proyecto_test\frontend\src\index.css`
+- [X] T011 [P] [US1] Restyle message list cards and empty states in `C:\Users\histo\proyecto_test\frontend\src\pages\ListaMensajes.jsx` and `C:\Users\histo\proyecto_test\frontend\src\index.css`
+- [X] T012 [US1] Ensure shared route-level page headers and spacing remain consistent across `C:\Users\histo\proyecto_test\frontend\src\pages\Home.jsx`, `C:\Users\histo\proyecto_test\frontend\src\pages\Formulario.jsx`, `C:\Users\histo\proyecto_test\frontend\src\pages\CrearTicket.jsx`, `C:\Users\histo\proyecto_test\frontend\src\pages\ListaMensajes.jsx`, and `C:\Users\histo\proyecto_test\frontend\src\pages\Dashboard.jsx`
+- [X] T013 [US1] Verify the global token system is applied consistently across shell, cards, and typography in `C:\Users\histo\proyecto_test\frontend\src\index.css`
 
 **Checkpoint**: User Story 1 is complete when the shell and non-form pages already communicate the neo-brutalist identity.
 
@@ -65,10 +65,10 @@
 
 ### Implementation for User Story 2
 
-- [ ] T014 [P] [US2] Rebuild the message form with shared primitives in `C:\Users\histo\proyecto_test\frontend\src\pages\Formulario.jsx`
-- [ ] T015 [P] [US2] Rebuild the ticket form with shared primitives in `C:\Users\histo\proyecto_test\frontend\src\pages\CrearTicket.jsx`
-- [ ] T016 [US2] Align form field, button, select, and feedback styling for both forms in `C:\Users\histo\proyecto_test\frontend\src\index.css`
-- [ ] T017 [US2] Preserve accessible label, status, and disabled/loading behavior in `C:\Users\histo\proyecto_test\frontend\src\pages\Formulario.jsx`, `C:\Users\histo\proyecto_test\frontend\src\pages\CrearTicket.jsx`, `C:\Users\histo\proyecto_test\frontend\src\components\TextInput.jsx`, and `C:\Users\histo\proyecto_test\frontend\src\components\Button.jsx`
+- [X] T014 [P] [US2] Rebuild the message form with shared primitives in `C:\Users\histo\proyecto_test\frontend\src\pages\Formulario.jsx`
+- [X] T015 [P] [US2] Rebuild the ticket form with shared primitives in `C:\Users\histo\proyecto_test\frontend\src\pages\CrearTicket.jsx`
+- [X] T016 [US2] Align form field, button, select, and feedback styling for both forms in `C:\Users\histo\proyecto_test\frontend\src\index.css`
+- [X] T017 [US2] Preserve accessible label, status, and disabled/loading behavior in `C:\Users\histo\proyecto_test\frontend\src\pages\Formulario.jsx`, `C:\Users\histo\proyecto_test\frontend\src\pages\CrearTicket.jsx`, `C:\Users\histo\proyecto_test\frontend\src\components\TextInput.jsx`, and `C:\Users\histo\proyecto_test\frontend\src\components\Button.jsx`
 
 **Checkpoint**: User Story 2 is complete when both forms feel consistent, readable, and keyboard-friendly on their own.
 
@@ -82,10 +82,10 @@
 
 ### Implementation for User Story 3
 
-- [ ] T018 [US3] Redesign dashboard metric cards, filter controls, and ticket card hierarchy in `C:\Users\histo\proyecto_test\frontend\src\pages\Dashboard.jsx` and `C:\Users\histo\proyecto_test\frontend\src\index.css`
-- [ ] T019 [US3] Implement asymmetric dashboard grid behavior and responsive reflow in `C:\Users\histo\proyecto_test\frontend\src\index.css`
-- [ ] T020 [US3] Implement staggered reveal timing and reduced-motion-safe fallback for dashboard cards in `C:\Users\histo\proyecto_test\frontend\src\pages\Dashboard.jsx` and `C:\Users\histo\proyecto_test\frontend\src\index.css`
-- [ ] T021 [US3] Preserve ticket status interactions and readability with the new styling in `C:\Users\histo\proyecto_test\frontend\src\pages\Dashboard.jsx`
+- [X] T018 [US3] Redesign dashboard metric cards, filter controls, and ticket card hierarchy in `C:\Users\histo\proyecto_test\frontend\src\pages\Dashboard.jsx` and `C:\Users\histo\proyecto_test\frontend\src\index.css`
+- [X] T019 [US3] Implement asymmetric dashboard grid behavior and responsive reflow in `C:\Users\histo\proyecto_test\frontend\src\index.css`
+- [X] T020 [US3] Implement staggered reveal timing and reduced-motion-safe fallback for dashboard cards in `C:\Users\histo\proyecto_test\frontend\src\pages\Dashboard.jsx` and `C:\Users\histo\proyecto_test\frontend\src\index.css`
+- [X] T021 [US3] Preserve ticket status interactions and readability with the new styling in `C:\Users\histo\proyecto_test\frontend\src\pages\Dashboard.jsx`
 
 **Checkpoint**: User Story 3 is complete when the admin dashboard is independently usable and visually aligned with the redesign.
 
@@ -95,7 +95,7 @@
 
 **Purpose**: Finish verification, edge-case handling, and cross-story consistency.
 
-- [ ] T022 [P] Implement and verify custom font fallback behavior in `C:\Users\histo\proyecto_test\frontend\index.html` and `C:\Users\histo\proyecto_test\frontend\src\index.css`
+- [X] T022 [P] Implement and verify custom font fallback behavior in `C:\Users\histo\proyecto_test\frontend\index.html` and `C:\Users\histo\proyecto_test\frontend\src\index.css`
 - [ ] T023 [P] Verify contrast ratios, visible focus states, and forced-colors behavior across key routes in `C:\Users\histo\proyecto_test\specs\002-frontend-redesign\quickstart.md`
 - [ ] T024 Implement responsive QA fixes for `320px`, `640px`, `960px`, and `1440px` in `C:\Users\histo\proyecto_test\frontend\src\index.css`
 - [ ] T025 Run manual route verification and record findings in `C:\Users\histo\proyecto_test\specs\002-frontend-redesign\quickstart.md`
